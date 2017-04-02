@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block main %}
+    <section layout="column center-center" class="contact-container">
+
+        <div class="contact-title">
+            <h1>contact us</h1>
+        </div>
+
+        <div class="contact-wrapper" layout="row top-left">
+
+            <div class="contact-text" self="">
+                <p>
+                    Do you have a question? <br>
+                    Or maybe a suggestion? <br>
+                    Or even dropping by to say hello? <br>
+                    Whatever the reason, we would love to hear from you!
+                </p>
+            </div>
+
+            <form method="POST" id="contact" self="size-x5" class="contact-form" layout="column center-center">
+                {% csrf_token %}
+
+                {{ form.non_field_errors }}
+                <div class="contact-names" layout="row center-justify">
+                    <div class="input_container">
+                        <input name="fname" type="text" self="size-x1" placeholder="Name">
+                        {{ form.fname.errors }}
+                    </div>
+
+                    <div class="input_container">
+                        {{ form.surname.errors }}
+                        <input name="surname" type="text" self="size-x1" placeholder="Surname">
+                    </div>
+
+                </div>
+
+                <div class="contact-emailphone" layout="row center-justify">
+                    <div class="input_container">
+                        {{ form.email.errors }}
+                        <input name="email" type="email" self="size-x1" placeholder="Email">
+                    </div>
+
+                    <div class="input_container">
+                        {{ form.phone.errors }}
+                        <input name="phone" type="text" self="size-x1" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="msg" layout="row center-center" >
+                    {{ form.content.errors }}
+                    <textarea name="content"  rows='1' data-min-rows='1' class="autoExpand" name="" id="" self="size-x1" placeholder="Enter your message here."></textarea>
+                </div>
+
+                <div class="g-recaptcha" data-sitekey="{{ .CapKey }}"></div>
+                <br>
+                <div class="button orange" layout="row center-center">
+                    <button type="submit" form="contact" value="send">Send</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+{% endblock %}

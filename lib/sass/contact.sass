@@ -1,0 +1,107 @@
+@import settings
+
+.contact-container
+    position: relative
+    background: $bg-grey
+    padding: 130px 20px 38px
+    .contact-title
+        position: absolute
+        left: 0
+        top: 55px
+        @media #{$max1034}
+            left: 10px
+        // @media #{$max650}
+        //     top: 20px
+        h1
+            background: $orange
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $orange
+                width: 10px
+                top: 0
+                left: -10px
+    .contact-wrapper
+        @media #{$max650}
+            flex-direction: column
+    .contact-text
+        background: $white
+        // max-width: 400px
+        margin-right: 20px
+        width: 245px
+        padding: 0 10px
+        border: 1px dashed $orange
+        @media #{$max650}
+            margin-right: 0
+            width: 100%
+            margin-bottom: 30px
+    .contact-form
+        // margin-top: 30px
+        // max-width: 600px
+        width: 100%
+        button
+            outline: none
+            border: none
+        .input_container
+            width: 100%
+            margin: 0 20px
+        input
+            border-top: none
+            border-left: none
+            border-right: none
+            background: transparent
+            outline: none
+            width: 100%
+            padding: 15px 0
+            // padding: 10px
+            border-bottom: 2px solid $orange
+        textarea
+            padding: 15px 0
+            overflow: hidden
+            // padding: 10px 0
+            margin: 0 20px
+            outline: none
+            width: 100%
+            border: none
+            border-bottom: 2px solid $orange
+            background: transparent
+            resize: none
+            margin-bottom: 30px
+            @media #{$max650}
+                margin: 0 0 30px 0
+        .contact-names, .contact-emailphone
+            margin-bottom: 20px
+            @media #{$max650}
+                margin-bottom: 0px
+                flex-direction: column
+    ::-webkit-input-placeholder
+        color: lighten($letters, 30%)
+
+    :-moz-placeholder
+        color: lighten($letters, 30%)
+
+    ::-moz-placeholder
+        color: lighten($letters, 30%)
+
+    :-ms-input-placeholder
+        color: lighten($letters, 30%)

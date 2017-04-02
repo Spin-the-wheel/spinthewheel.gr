@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}News and Actions{% endblock %}
+
+{% block main %}
+
+    <section layout="column center-center" class="news-container">
+
+        <div class="news-title">
+            <h1>News & Actions</h1>
+        </div>
+
+        {% comment %}
+        <div class="big-logo" self="size-x1">
+            <img src="{% static 'svg/big.svg' %}" alt="spin-the-wheel-logo">
+        </div>
+        {% endcomment %}
+
+        <div class="timeline" layout="rows top-center" id="paginated_posts">
+
+            {% for post in paginated_posts %}
+                <div class="news-left new-order" layout="row center-center">
+                    <a href="{{ post.url }}" target="blank" class="news-item" layout="row center-center" self="top">
+                        <div self="size-x2">
+                            <div class="news-item-title" layout="column bottom-left">
+                                <small class="date">{{ post.date }}</small>
+                                <h2>{{ post.title}}</h2>
+                            </div>
+                            <p>{{ post.body|striptags|truncatewords_html:20}}</p>
+                        </div>
+
+                        {% if post.image %}
+                            <div class="news-img" self="size-x1" style="background-image: url({{ post.image.url}});background-size: cover;background-position: center;">
+                                <p  layout="row center-center" class="read-more">read more</p>
+                            </div>
+                        {% else %}
+                            <div class="news-img" self="size-x1" style="background-image: url({% static 'svg/big.svg' %});background-size: cover;background-position: center;">
+                                <p  layout="row center-center" class="read-more">read more</p>
+                            </div>
+                        {% endif %}
+                    </a>
+                </div>
+                <br>
+            {% endfor %}
+
+            <div class="pagination" self="center">
+                <span class="step-links">
+                    {% if paginated_posts.has_previous %}
+                        <a class="pagination_btn" href="{% url 'news:index' %}?page={{ paginated_posts.previous_page_number }}">
+                            <div class="icons" layout="row center-center">
+                                <svg class="icon-prev green">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                                </svg>
+                            </div>
+                        </a>
+                    {% endif %}
+
+                    <span class="current">
+                    Page {{ paginated_posts.number }} of {{ paginated_posts.paginator.num_pages }}
+                    </span>
+
+                    {% if paginated_posts.has_next %}
+                        <a class="pagination_btn" href="{% url 'news:index' %}?page={{ paginated_posts.next_page_number }}">
+                            <div class="icons" layout="row center-center">
+                                <svg class="icon-next green" >
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                                </svg>
+                            </div>
+                        </a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

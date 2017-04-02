@@ -1,0 +1,46 @@
+$blue: #22BCC4
+$pink: #EF5E61
+$yellow: #FFC80C
+$green: #88C440
+$letters: #161515
+$purple: #AA1D85
+$bg-grey: #F1F4ED
+$black: #000
+$white: #fff
+$orange: #f17424
+
+//media queries
+$max1034: "only screen and (max-width : 1034px)"
+$max900: "only screen and (max-width : 900px)"
+$max750: "only screen and (max-width : 750px)"
+$max650: "only screen and (max-width : 650px)"
+$max480: "only screen and (max-width : 480px)"
+$max406: "only screen and (max-width : 406px)"
+$max320: "only screen and (max-width : 320px)"
+
+.show-from-900
+    display: none
+    @media #{$max900}
+        display: flex
+.hide-from-900
+    display: flex
+    @media #{$max900}
+        display: none
+
+.hide-from-480
+    display: flex
+    @media #{$max480}
+        display: none
+.show-from-480
+    display: none
+    @media #{$max480}
+        display: flex
+
+.hide
+    overflow: hidden
+
+.fixed
+    position: fixed
+    margin-top: 0!important
+    background-color: $white
+    z-index: 1

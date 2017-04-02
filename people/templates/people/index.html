@@ -1,0 +1,143 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}The people {% endblock %}
+
+{% block scripts %}
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk2EVDaKgF8ksMUAenXRHPj4fK8w7zYwQ&callback=initMap">
+    </script>
+
+    <script>
+        function initMap() {
+            var uluru = {lat: -9.555279, lng: 33.944839};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 3,
+                center: uluru,
+                scrollwheel: false
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block main %}
+    <section class="wedo-container" layout="column center-center">
+
+        <div id="map"></div>
+
+        <div style="height:20px"></div>
+
+        <div class="wedo-title">
+            <h1>What we do</h1>
+        </div>
+
+        <div class="wedo-text" layout="row top-center">
+            <div class="text-left" self="size-x1" >
+                <p>
+                    Our vision is to make our world an inspiring place to live! That's why in July '17 we are cycling 700km in Africa – from Malawi to Tanzania, escaping from our comfort zone and overcoming our fears. <br><br>
+
+                    Our goal is to support on our way 4,500 children, in 15 schools and donate stationary, notebooks and sport equipment. With your support, MTENDE Foundation will also receive 3 laptops and 1 camera. MTENDE Foundation is a Malawian NGO that supports vulnerable communities and community based organizations to develop a well informed and self sustainable community! <br><br>
+                    <strong>Why Africa?</strong> <br><br>
+                    The average classroom lacks the basic essential school supplies that offer a meaningful educational experience for kids. The parents cannot provide the quality and quantity of supplies needed.  The lack of school supplies affects negatively the quality of education that the children receive. <br>
+                    In numbers:
+                </p>
+                    <ul>
+                        <li>-1 in 3 adults in Africa cannot read.</li>
+                        <li>-In some classrooms, children share 1 pencil between 20 students.</li>
+                        <li>-34 million children (1 in 5) are out of school - 90% of them live in rural areas.</li>
+                    </ul>
+                <p >
+                    Wanna learn more?! <a style="color:#EF5E61" rel="nofollow" target="blank" href="http://en.unesco.org/gem-report/sites/gem-report/files/191393e.pdf">Click here!</a>
+                </p>
+            </div>
+
+            <div class="text-right" self="size-x1">
+                <p>
+                    The project is under the direct support of <a target="blank" href="http://www.anikefoundation.org/" style="color:#EF5E61">Anike Foundation</a>, a non-profit organisation that fights for a world in which people in underdeveloped and developing countries have similar access to educational facilities and infrastructure as those in developed countries.
+                </p>
+
+                <b>The schools we are going to visit are the following:</b>
+                <ul>
+                    <li>-Magwero Primary School</li>
+                    <li>-Mtengowanthenga school</li>
+                    <li>-Mponera school</li>
+                    <li>-Madisi school</li>
+                    <li>-Kasungu school</li>
+                    <li>-Nkhamenya school</li>
+                    <li>-Kamalambo school</li>
+                    <li>-Chamakala school</li>
+                    <li>-Luviri school</li>
+                    <li>-Kazomba school</li>
+                    <li>-Kakhuta school</li>
+                    <li>-Chikangawa school</li>
+                    <li>-Katoto school</li>
+                    <li>-Ekwendeni school</li>
+                    <li>-Livistonia school</li>
+                </ul>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="weare-container" layout="row top-center">
+
+        <div class="weare-title">
+            <h1>Who we are</h1>
+        </div>
+
+
+        <div class="people-wrapper" layout="rows top-center">
+
+            {% for person in people %}
+
+                <div class="person left-rigth" layout="row top-center">
+                    <div class="person-img" self="size-x1" style="background-image: url({{ person.image.url }});background-size: cover;background-position: center;">
+                        </div>
+
+                    <p self="size-x2">
+                        <b>{{ person.name }} {{ person.last_name}}, {{ person.job }} <br>
+                        <i>{{ person.role }}</i></b>
+                        <br>
+                        {{person.description}}
+                    </p>
+                </div>
+            {% endfor %}
+
+            <div class="pagination" self="center">
+                <span class="step-links">
+                    {% if people.has_previous %}
+                        <a class="pagination_btn" href="{% url 'people:index' %}?page={{ people.previous_page_number }}">
+                            <div class="icons" layout="row center-center">
+                                <svg class="icon-prev pink">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                                </svg>
+                            </div>
+                        </a>
+                    {% endif %}
+
+                    <span class="current">
+                    Page {{ people.number }} of {{ people.paginator.num_pages }}
+                    </span>
+
+                    {% if people.has_next %}
+                        <a class="pagination_btn" href="{% url 'people:index' %}?page={{ people.next_page_number }}">
+                            <div class="icons" layout="row center-center">
+                                <svg class="icon-next pink">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                                </svg>
+                            </div>
+                        </a>
+                    {% endif %}
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}

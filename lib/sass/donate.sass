@@ -1,0 +1,126 @@
+@import settings
+
+.donate-container
+    position: relative
+    background: $bg-grey
+    padding: 0 20px 50px
+    .donate-title
+        position: absolute
+        left: 0
+        top: 55px
+        @media #{$max1034}
+            left: 10px
+        // @media #{$max650}
+        //     top: 20px
+        h1
+            background: $yellow
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $yellow
+                width: 10px
+                top: 0
+                left: -10px
+    .donate-text
+        margin-top: 140px
+        margin-bottom: 10px
+        max-width: 500px
+        width: 100%
+        .donation
+            padding: 20px
+            border: 2px dashed $yellow
+            text-align: center
+            background: $white
+        .all-maters
+            border-top: 2px solid $letters
+            border-bottom: 2px solid $letters
+            padding: 5px 0
+            width: 128px
+
+
+//sponsors
+.sponsors-container
+    position: relative
+    background: $bg-grey
+    padding: 60px 20px 80px
+    text-align: center
+    .sponsors-title
+        position: absolute
+        left: 0
+        top: 0
+        @media #{$max1034}
+            left: 10px
+        // @media #{$max650}
+        //     top: 20px
+        h1
+            background: $yellow
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $yellow
+                width: 10px
+                top: 0
+                left: -10px
+    .sponsors
+        .sponsor
+            // width: 200px
+            border: 2px dashed $yellow
+            border-radius: 3px
+            padding: 5px
+            margin: 10px
+            background-color: $white
+            filter: grayscale(1)
+            .bg-image-sponsors
+                background-size: contain
+                width: 150px
+                height: 115px
+                background-repeat: no-repeat
+                background-position: center
+                @media #{$max406}
+                    width: 130px
+                @media #{$max320}
+                    width: 100px
+                    height: 100px
+            &:hover
+                filter: grayscale(0)
+                cursor: pointer

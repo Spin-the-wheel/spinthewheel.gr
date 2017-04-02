@@ -1,0 +1,79 @@
+@import settings
+
+.weare-container
+    background: $bg-grey
+    padding-top: 70px
+    position: relative
+    .people-wrapper
+        max-width: 920px
+        width: 100%
+        margin-bottom: 50px
+        @media #{$max900}
+            flex-direction: column
+        .people-left
+            @media #{$max900}
+                flex-direction: column
+    .weare-title
+        background: $pink
+        position: absolute
+        left: 0
+        top: 0
+        @media #{$max1034}
+            left: 10px
+        h1
+            background: $pink
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $pink
+                width: 10px
+                top: 0
+                left: -10px
+    .person
+        padding: 10px 20px
+        @media #{$max650}
+            flex-direction: column
+            align-items: center
+            text-align: center
+        &.left-rigth
+            width: 50%
+            @media #{$max900}
+                width: 100%
+            .person-img
+                margin-right: 20px
+                @media #{$max650}
+                    margin-right: 0
+                    margin-top: 15px
+                    margin-bottom: 15px
+        p
+            margin: 0
+    .person-img
+        width: 100%
+        max-width: 100px
+        height: 100px
+        min-height: 100px
+        border-radius: 50px
+        img
+            width: 100px
+            height: 100px
+            border-radius: 50px

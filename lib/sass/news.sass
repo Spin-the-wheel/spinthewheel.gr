@@ -1,0 +1,170 @@
+@import settings
+
+.news-container
+    background: $bg-grey
+    position: relative
+    padding-top: 80px
+    padding-bottom: 50px
+    @media #{$max750}
+        padding-top: 105px
+    .news-title
+        background: $pink
+        position: absolute
+        left: 0
+        top: 55px
+        @media #{$max1034}
+            left: 10px
+        // @media #{$max650}
+        //     top: 20px
+        h1
+            background: $green
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $green
+                width: 10px
+                top: 0
+                left: -10px
+    .big-logo
+        img
+            width: 80px
+            height: 80px
+        @media #{$max750}
+            display: none
+    .timeline
+        margin-top: 20px
+        @media #{$max750}
+            flex-direction: column
+        .news-img
+            width: 100%
+            max-width: 100px
+            height: 100px
+            border-radius: 50px
+            margin: 10px
+            transition: all .5s
+            .read-more
+                transition: all .4s
+                transform: rotateY(90deg)
+                width: 100%
+                max-width: 100px
+                height: 100px
+                border-radius: 50px
+                margin: 0
+                color: $white
+                background: $green
+                padding-bottom: 4px
+            img
+                width: 100px
+                height: 100px
+                border-radius: 50px
+        .middle-line
+            width: 6px
+            background: $green
+            // margin: 0 30px
+        .news-item
+            padding: 0 20px
+            position: relative
+            @media #{$max750}
+                padding: 5px 20px
+            @media #{$max650}
+                flex-direction: column
+                text-align: center !important
+            h2
+                margin: 0
+                font-size: 20px
+                color: $green
+            .date
+                font-size: 12px
+                font-weight: bold
+            p
+                margin: 0
+            .news-item-title
+                padding: 5px
+                @media #{$max650}
+                    align-items: center!important
+            &:hover
+                .read-more
+                    transform: rotateY(0deg)
+            &.right-block
+                .news-img
+                    order: -1
+        .news-left
+            &.new-order
+                // @media #{$max750}
+                flex-direction: column
+                width: 50%
+                margin: 20px 0
+                @media #{$max750}
+                    width: 100%
+                    margin: 0
+            .news-item
+                text-align: right
+                // @media #{$max750}
+                text-align: left
+                &:after
+                    content: ""
+                    width: 20px
+                    height: 2px
+                    background: $green
+                    right: 0
+                    position: absolute
+                    // @media #{$max750}
+                    display: none
+                // &.right-block
+                    // margin-top: 75px
+                    // text-align: start
+                    // // @media #{$max750}
+                    // margin-top: 0
+                    // &:after
+                        // content: ""
+                        // width: 20px
+                        // height: 2px
+                        // background: $green
+                        // left: 0
+                        // position: absolute
+                        // @media #{$max750}
+                            // display: none
+                .news-item-title
+                    @media #{$max750}
+                        align-items: flex-start
+
+            .news-img
+                order: 1
+                // @media #{$max750}
+                order: -1
+        // .news-right
+            // margin-top: 75px
+            // @media #{$max750}
+                // margin-top: 0
+            // .news-item
+                // &:before
+                    // content: ""
+                    // width: 20px
+                    // height: 2px
+                    // background: $green
+                    // left: 0
+                    // position: absolute
+                    // @media #{$max750}
+                        // display: none
+
+

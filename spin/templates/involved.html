@@ -1,0 +1,83 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="involved-header">
+        <div class="image-involved" style="background-image: url('{% static 'images/africa.jpg' %}');background-size: cover;background-position: center;">
+        </div>
+        <div class="involved-title">
+            <h1>get involved</h1>
+        </div>
+    </section>
+
+    <div style="height:20px"></div>
+
+    <section class="get-involved-container" layout="column center-center">
+
+        <div class="involved" layout="row top-justify">
+
+            <div class="way" self="size-x1">
+                <h2>Spread the idea</h2>
+                <ul>
+                    <li>share our webpage on facebook </li>
+                    <li>communicate it to your friends</li>
+                    <li>write a comment on our <a target="blank" href="https://www.facebook.com/groups/spinthewheel" style="color:#AA1D85">facebook group(Gr)</a>, <a target="blank" href="https://www.facebook.com/spinthewheel.gr" style="color:#AA1D85">facebook group(En)</a> and <a href="http://blog.spinthewheel.gr/" target='blank' style="color:#AA1D85">blog page(Gr)</a>, <a href="https://spinthewheel-en.tumblr.com/" target='blank' style="color:#AA1D85">blog page(En)</a>.</li>
+                </ul>
+            </div>
+            <div class="way" self="size-x1">
+                <h2>Become a Sponsor</h2>
+                <ul>
+                    <li>cycling accessories</li>
+                    <li>school supplies</li>
+                    <li>travel arrangements (air tickets, car rental for the supporting team, accommodation, transfer of supplies)</li>
+                    <li>laptops, cameras, tablets, smartphones for schools' staff</li>
+                </ul>
+            </div>
+            <div class="way" self="size-x1">
+                <h2>Make a Donation</h2>
+                <p>
+                    The most preferable way to make a donation is via bank transfer, as there are no extra fees involved. In this way we make sure that the children get the <strong>100%</strong> of your contribution.
+                </p>
+
+                <div class="button purple" layout="row center-center">
+                    <a href="/donate">
+                        donate
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="involved" layout="row top-justify">
+
+            <div class="way" self="size-x1">
+                <h2>Join our Team</h2>
+                <p>
+                    It would be a real pleasure for us to widen our group and at the same time offer 4500 smiles to children. There are lots of things to be done in order to get everything organized! YOU can be part it! If you are inspired by the project contact us and let's spin the wheel together!
+                </p>
+            </div>
+            <div class="way" self="size-x1">
+                <h2>Create your own Campaign</h2>
+                <p>
+                    Whatever your occupation is, you can help! Organize your own event, share your idea and invite people to participate all together. Feel free to contribute in your own way. It can be a lesson, a party, a concert, a service or...?
+                </p>
+            </div>
+            <div class="way" self="size-x1 center" layout="column center-center">
+                <div class="icons" layout="row center-center">
+                    <svg class="icon-brain">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#brain" />
+                    </svg>
+                </div>
+
+
+                <div class="button purple" layout="row center-center">
+                    <a href="/contact-us">
+                        get involved today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

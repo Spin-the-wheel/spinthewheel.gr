@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block main %}
+    <section class="gallery-container" layout="column center-spread">
+
+        <div class="gallery-title">
+            <h1>Gallery</h1>
+        </div>
+
+        <div class="folders-container" layout="rows center-left">
+            {% for gallery in galleries %}
+                <div class="wrapper-folder">
+                    <div class="folder" style="background-image: url({{ gallery.image.url }});background-size: cover;background-position: center;">
+                        <a href="{% url 'gallery:folder' gallery.slug %}" class="folder-name" layout="column center-center">
+                            <h3>{{ gallery.title }}</h3>
+                            <span class="line"></span>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </section>
+{% endblock %}

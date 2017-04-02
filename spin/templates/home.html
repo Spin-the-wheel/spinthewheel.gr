@@ -1,0 +1,167 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/slick-carousel/slick/slick-theme.css' %}">
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'vendor/slick-carousel/slick/slick.min.js' %}"></script>
+    <script src="{% static 'js/carousel.js' %}"></script>
+
+    <script type="text/javascript">
+        var tag = document.createElement('script');
+        tag.id = 'iframe-demo';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video', {
+                playerVars: {
+                    autoplay: 1,        // Auto-play the video on load
+                    controls: 0,        // Show pause/play buttons in player
+                    showinfo: 0,        // Hide the video title
+                    modestbranding: 1,  // Hide the Youtube Logo
+                    loop: 1,            // Run the video in a loop
+                    fs: 0,
+                    rel: 0,              // Hide the full screen button
+                    cc_load_policy: 0, // Hide closed captions
+                    iv_load_policy: 3,  // Hide the Video Annotations
+                    autohide: 0         // Hide video controls when playing
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                }
+            });
+        }
+        function onPlayerReady(e) {
+            e.target.mute();
+            e.target.playVideo();
+        }
+
+    </script>
+{% endblock %}
+
+{% block main %}
+    <section class="home-main-container">
+
+        {# {% if videos %} #}
+             <div class="hide-from-480 image-slider" style="position:relative;height:0;padding-bottom:56.25%">
+                <iframe id="video" src="https://www.youtube.com/embed/{{videos.link}}?enablejsapi=1&autoplay=1&controls=0&showinfo=0&loop=1&rel=0&disablekb=1&playlist={{videos.link}}" style="position:absolute;width:100%;height:100%;left:0" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%"></div>
+                <div class="home-title">
+                    <h1>1 Month, 800 km, 4500 smiles!</h1>
+                </div>
+             </div>
+        {# {% else %} #}
+            <div class="show-from-480 image-slider" style="background-image:url({% static 'images/indexKids.jpg' %})">
+                <div class="home-title">
+                    <h1>1 Month, 800 km, 4500 smiles!</h1>
+                </div>
+            </div>
+        {# {% endif %} #}
+
+    </section>
+
+    <div style="height:20px"></div>
+
+    <section class="home-project-info" layout="column center-spread">
+
+        {% comment %}
+        <div class="gallery-title">
+            <h1>Spin photos</h1>
+        </div>
+
+        <div class="slider">
+            {% for i in 'xxxxxxxxxx' %}
+                <div class="image_slider">
+                    <img src="{% static 'images/indexKids.jpg' %}" alt="">
+                </div>
+            {% endfor %}
+        </div>
+        {% endcomment %}
+
+        <div class="home_info" layout="row center-spread">
+            <div class="home-project-info-left" layout="column top-left" self="size-x1">
+                <div class="home-few-words">
+                    <h3>Latest News</h3>
+                    <h2>{{post.title}}</h2>
+                    <p>{{post.body|striptags|truncatewords_html:40 }}</p>
+                    <p><a href="{{ post.url }}" rel="nofollow" target="blank" style="color:#22BCC4;white-space:nowrap">read more in our blog!</a></p>
+                </div>
+
+                <div class="button blue project">
+                    <a href="{% url 'people:index' %}">
+                        project details
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="home-actions" self="size-x1" layout="row center-justify">
+
+                <div class="home-donate" self="size-x1">
+
+                    <div class="box" layout="row center-center">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-box">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#box"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="button blue actions">
+                        <a href="{% url 'support:index' %}">donate</a>
+                    </div>
+
+                    <p>
+                        Αll acts of kindness, from big to small are appreciated!
+                    </p>
+
+                </div>
+
+                <div class="home-involved" self="size-x1">
+
+                    <div class="brain" layout="row center-center">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-brain">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#brain" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="button blue actions">
+                        <a href="{% url 'involved' %}">get involved</a>
+                    </div>
+
+                    <p>
+                        The world in which we live, is a mirror of our actions! No man is an island!
+                    </p>
+
+                </div>
+
+                <div class="home-mission" self="size-x1">
+
+                    <div class="mission" layout="row center-center">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-mission">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#camera" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="button blue actions">
+                        <a href="{% url 'gallery:index' %}">gallery</a>
+                    </div>
+
+                    <p>
+                        A picture is worth a thousand words!
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

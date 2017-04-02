@@ -1,0 +1,49 @@
+{% load static %}
+
+<footer self="bottom">
+    <section class="footer-info" layout="row center-justify">
+
+        <div class="copyright" self="size-x2 stretch" layout="column center-center">
+            <h5><span>&#169;</span>2017 Spin the Wheel</h5>
+            <h5>Email: info@spinthewheel.gr</h5>
+        </div>
+
+        <div class="contact-us" self="size-x2 stretch" layout="row center-center">
+            <div class="button orange footer-btn">
+                <a href="{% url 'contact:index' %}">
+                    contact us
+                </a>
+            </div>
+        </div>
+
+        <div class="fb" self="size-x1 stretch" layout="column center-center">
+            <a layout="row center-center" target="blank" href="https://www.facebook.com/groups/spinthewheel">
+                GR
+                <svg class="icon-fb">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg'%}#fb"/>
+                </svg>
+            </a>
+            <a layout="row center-center" target="blank" href="https://www.facebook.com/spinthewheel.gr">
+                EN
+                <svg class="icon-fb">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg'%}#fb"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="blog" self="size-x1 stretch" layout="column center-center">
+            <a layout="row center-center" target="blank" href="http://blog.spinthewheel.gr/">
+                Blog GR
+            </a>
+            <a layout="row center-center" target="blank" href="https://spinthewheel-en.tumblr.com/">
+                Blog EN
+            </a>
+        </div>
+
+        <div class="anike" self="size-x1 stretch" layout="row center-center">
+            <a target="blank" rel="nofollow" href="http://anikefoundation.org/">
+                <img src="{% static 'images/anike.png' %}" alt="anikefoundation">
+            </a>
+        </div>
+    </section>
+</footer>

@@ -1,0 +1,287 @@
+@import settings
+@import wedo
+@import weare
+@import home
+@import get-involved
+@import donate
+@import news
+@import gallery
+@import contact
+
+body
+    font-family: 'Didact Gothic', sans-serif
+    color: $letters
+    font-size: 15px
+    background: $white
+    margin: 0
+    height: 100vh
+    position: relative
+    width: 100%
+a
+    text-decoration: none
+    color: inherit
+
+p, li
+    font-family: 'Open Sans', sans-serif
+
+section, header
+    max-width: 1000px!important
+    width: 100%
+    margin: 0 auto
+
+header
+    padding: 0 20px
+
+footer
+    background: $letters
+    width: 100%
+    // margin-top: 30px!important
+    padding: 25px 20px
+    .footer-info
+        @media #{$max650}
+            flex-direction: column
+    .copyright
+        color: $white
+        border-right: 2px dotted $white
+        @media #{$max650}
+            padding: 10px
+            border-right: none
+            order: 1
+        h5
+            margin: 0
+    .contact-us
+        @media #{$max650}
+            border-right: none
+            padding: 10px
+        border-right: 2px dotted $white
+    .fb
+        color: $white
+        @media #{$max650}
+            border-right: none
+            padding: 10px
+        border-right: 2px dotted $white
+        a
+            margin-bottom: 5px
+            &:hover
+                .icon-fb
+                    fill: $white
+    .blog
+        color: $white
+        @media #{$max650}
+            border-right: none
+            padding: 10px
+        border-right: 2px dotted $white
+        a
+            margin-bottom: 5px
+            &:hover
+                color: $blue
+                cursor: pointer
+    .anike
+        @media #{$max650}
+            padding: 10px
+        img
+            width: 100px
+
+.button
+    &.blue
+        @media #{$max650}
+            width: 100%
+        a
+            &:before
+                background: $blue
+        &.project
+            a
+                background: $blue!important
+                color: $white
+                &:before
+                    background: #e1e1e1
+                &:hover
+                    color: #666
+    &.purple
+        @media #{$max650}
+            width: 100%
+        a
+            &:before
+                background: $purple
+    &.orange
+        @media #{$max650}
+            width: 100%
+        a, button
+            background: $orange!important
+            color: $white
+            &:before
+                background: #e1e1e1
+            &:hover
+                color: #666
+    &.yellow
+        @media #{$max650}
+            width: 100%
+        a
+            &:before
+                background: $yellow
+    &.actions
+        width: 100%
+        a
+            width: inherit
+            padding: 10px 20px
+    &.footer-btn
+        a
+            background: $white
+            margin: 0 10px
+    a, button
+        display: inline-block
+        width: 200px
+        font-weight: bold
+        text-align: center
+        white-space: nowrap
+        padding: 10px
+        text-transform: uppercase
+        letter-spacing: 0.8px
+        vertical-align: middle
+        transform: perspective(1px) translateZ(0)
+        box-shadow: 0 0 1px transparent
+        position: relative
+        background: #e1e1e1
+        transition-property: color
+        transition-duration: 0.3s
+        cursor: pointer
+        text-decoration: none
+        color: #666
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-font-smoothing: antialiased
+        @media #{$max650}
+            width: 100%
+        &:before
+            content: ""
+            position: absolute
+            z-index: -1
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            transform: scaleY(0)
+            transform-origin: 50%
+            transition-property: transform
+            transition-duration: 0.3s
+            transition-timing-function: ease-out
+        &:hover
+            color: $white
+            &:before
+                transform: scaleY(1)
+
+#nav-icon
+    width: 37px
+    height: 30px
+    position: relative
+    transform: rotate(0deg)
+    transition: .5s ease-in-out
+    cursor: pointer
+    z-index: 2
+    span
+        display: block
+        position: absolute
+        height: 6px
+        width: 100%
+        background: $blue
+        border-radius: 9px
+        opacity: 1
+        left: 0
+        transform: rotate(0deg)
+        transition: .25s ease-in-out
+        &:nth-child(1)
+            top: 0px
+            transform-origin: left center
+        &:nth-child(2)
+            top: 11px
+            transform-origin: left center
+        &:nth-child(3)
+            top: 22px
+            transform-origin: left center
+    &.open
+        span
+            &:nth-child(1)
+                transform: rotate(45deg)
+                top: -3px
+                left: 8px
+            &:nth-child(2)
+                width: 0%
+                opacity: 0
+            &:nth-child(3)
+                transform: rotate(-45deg)
+                top: 23px
+                left: 8px
+    &.home span
+        background: $blue
+    &.people span
+        background: $pink
+    &.news span
+        background: $green
+    &.involved span
+        background: $purple
+    &.donate span
+        background: $yellow
+    &.contact span
+        background: $orange
+
+.icon-arrow
+    width: 35px
+    height: 35px
+    position: fixed
+    right: 20px
+    bottom: 115px
+    @media #{$max650}
+        display: none!important
+    &:hover
+        cursor: pointer
+
+.icon-fb
+    fill: $blue
+    width: 20px
+    height: 20px
+    margin-left: 10px
+    transition: all .3s
+    &:hover
+        fill: $white
+        cursor: pointer
+.infinity
+    position: relative
+    display: block
+.icon-infinity
+    width: 30px
+    height: 30px
+    position: absolute
+    bottom: -4px
+    right: 0
+
+//pagination buttons
+.pagination
+    position: relative
+.pagination_btn
+    &:hover
+        cursor: pointer
+
+.icon-next
+    width: 15px
+    height: 15px
+    position: absolute
+    right: -25px
+    top: 4px
+    &.green
+        &:hover
+            fill: $green
+    &.pink
+        &:hover
+            fill: $pink
+.icon-prev
+    transform: rotate(180deg)
+    width: 15px
+    height: 15px
+    position: absolute
+    left: -25px
+    top: 4px
+    &.green
+        &:hover
+            fill: $green
+    &.pink
+        &:hover
+            fill: $pink

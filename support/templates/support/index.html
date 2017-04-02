@@ -1,0 +1,77 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}Support Us{% endblock %}
+
+{% block main %}
+    <section layout="column center-center" class="donate-container">
+
+        <div class="donate-title">
+            <h1>support us</h1>
+        </div>
+
+        <div class="donate-text" layout="column top-center">
+
+            <p class="donation">
+                This is your chance to make a difference to the life of many children who do not have the basics for their education. We appreciate any offer you can make, as even 1 euro could buy most of the stationery supplies needed for one student, for a whole year.  <br> <br>
+
+                The most preferable way to make a donation is via <b>bank transfer</b>, as there are no extra fees involved. In this way we make sure that the children get the <b>100%</b> of your contribution. <br><br>
+
+                <b>Piraeus Bank</b><br>
+                <b style="color:#FFC80C">IBAN</b> : GR88 0171 5560 0065 5614 0205 427 <br>
+                <b style="color:#FFC80C">Name</b> : Spin the Wheel <br>
+                <b style="color:#FFC80C">BIC</b> :  PIRBGRAA
+                <br>
+
+                {# Reason: Spin the wheel #}
+            </p>
+
+            <h3 class="all-maters">1+1+1+1+....=
+                <span class="infinity">
+                    <svg class="icon-infinity">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg'%}#infinity"/>
+                    </svg>
+                </span>
+            </h3>
+
+        </div>
+
+        {% comment %}
+        <div class="button yellow" layout="row center-center">
+            <a target="_blank" href="https://www.generosity.com/education-fundraising/cycling-to-support-4-500-children-in-africa">
+                donate
+            </a>
+        </div>
+        {% endcomment %}
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            ">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+
+
+    </section>
+
+    <section  layout="column center-center" class="sponsors-container">
+
+        <div class="sponsors-title">
+            <h1>our sponsors</h1>
+        </div>
+
+        {% for kind in kinds %}
+            <h3>{{ kind.description }}</h3>
+            <div class="sponsors" layout="rows top-center">
+                {% for sponsor in kind.sponsor_set.all %}
+                    <a rel="nofollow" target="_blank" href="{{ sponsor.url }}" class="sponsor" >
+                        <div class="bg-image-sponsors" style="background-image:url({{ sponsor.image.url }})"></div>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+    </section>
+
+{% endblock %}

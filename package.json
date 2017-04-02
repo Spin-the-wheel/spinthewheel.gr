@@ -1,0 +1,25 @@
+{
+  "name": "spin",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-npm-copy-deps": "^1.0.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.0.48",
+    "flex-layout-attribute": "^1.0.3",
+    "jquery": "^3.2.1",
+    "slick-carousel": "^1.6.0",
+    "svg4everybody": "^2.1.7"
+  }
+}

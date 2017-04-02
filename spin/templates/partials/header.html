@@ -1,0 +1,24 @@
+{% load static %}
+
+<header class="header-container" layout='row bottom-justify'>
+
+    <div class="logo" self="size-x1">
+        <a href="#"><img src="{% static "svg/small.svg" %}" alt="spin-the-wheel-logo"></a>
+    </div>
+    <div  class="show-from-900" self="center">
+
+        <div id="nav-icon" class="">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <nav class="cl-effect-6 hide-from-900" layout="row bottom-right" self="size-x2">
+        <a class="{% if active_tab == 'home' %} active{% endif %}" href="{% url 'home' %}">Home</a>
+        <a class="{% if active_tab == 'people' %} active{% endif %}" href="{% url 'people:index' %}">The people</a>
+        <a class="{% if active_tab == 'news' %} active{% endif %}" href="{% url 'news:index' %}">News & Actions</a>
+        <a class="{% if active_tab == 'involved' %} active{% endif %}" href="{% url 'involved' %}">get involved</a>
+        <a class="{% if active_tab == 'support' %} active{% endif %}" href="{% url 'support:index' %}">Support us</a>
+        <a class="menu-hide {% if active_tab == 'contact' %} active{% endif %}" href="{% url 'contact:index' %}">Contact us</a>
+    </nav>
+</header>

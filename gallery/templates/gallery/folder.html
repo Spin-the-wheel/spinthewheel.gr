@@ -1,0 +1,37 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{% static 'vendor/%40fancyapps/fancybox/dist/jquery.fancybox.min.css' %}">{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'vendor/%40fancyapps/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <section class="gallery-container" layout="column center-spread">
+
+        <div class="gallery-title">
+            <h1>{{ gallery.title }}</h1>
+        </div>
+
+        <div class="folders-container" layout="rows center-left">
+            {% for image in images %}
+                <div class="wrapper-folder">
+                    <a href="{{ image.image.url }}" data-fancybox="group" data-caption="{{ image.caption }}">
+                        <div class="folder" style="background-image: url({{ image.image.url }});background-size: cover;background-position: center;">
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+        <div class="button blue project" self="center" style="padding: 0 25px">
+            <a href="{% url 'gallery:index' %}">
+                Back to gallery
+            </a>
+        </div>
+
+    </section>
+{% endblock %}

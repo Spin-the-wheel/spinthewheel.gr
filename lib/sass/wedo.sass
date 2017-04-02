@@ -1,0 +1,71 @@
+@import settings
+
+.wedo-container
+    background: $bg-grey
+    position: relative
+    #map
+        height: 400px
+        width: 100%
+        @media #{$max650}
+            height: 250px
+    .wedo-title
+        background: $pink
+        position: absolute
+        left: 0
+        top: 420px
+        @media #{$max1034}
+            left: 10px
+        @media #{$max650}
+            top: 270px
+        h1
+            background: $pink
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $pink
+                width: 10px
+                top: 0
+                left: -10px
+    .wedo-text
+        max-width: 920px
+        width: 100%
+        margin-bottom: 50px
+        margin-top: 50px
+        position: relative
+        .text-left, .text-right
+            padding: 20px
+            ul
+                list-style: none
+                padding: 0
+        .text-right
+            ul
+                columns: 2
+                @media #{$max406}
+                    columns: 1
+        @media #{$max650}
+            flex-direction: column
+            text-align: center
+        .circle-logo
+            img
+                width: 150px
+                height: 150px

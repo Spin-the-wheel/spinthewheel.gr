@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <title>{% block title %}Spin the wheel{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        {% block stylesheet %} {% endblock %}
+
+        <link rel="stylesheet" href="{% static 'vendor/flex-layout-attribute/css/flex-layout-attribute.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script type="text/javascript" src="{% static 'vendor/svg4everybody/dist/svg4everybody.min.js' %}"></script>
+        <script>svg4everybody();</script>
+
+    </head>
+
+    <body layout="column top-center">
+
+        {% include 'partials/header.html' %}
+
+        {% block main %}
+        {% endblock %}
+
+        <div style="height:20px;width:100%"></div>
+
+        {% include 'partials/footer.html' %}
+
+        <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+        {% block scripts %} {% endblock %}
+        <script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+</html>

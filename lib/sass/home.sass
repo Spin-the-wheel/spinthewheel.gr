@@ -1,0 +1,366 @@
+@import settings
+
+.header-container
+    margin-top: 50px
+    @media #{$max900}
+        margin-top: 20px
+    .logo
+        margin-right: 20px
+        img
+            max-width: 300px
+            width: 100%
+            position: relative
+            top: 4px
+    nav
+        max-width: 540px
+        width: 100%
+        @media #{$max900}
+            position: absolute
+            top: 0
+            width: 100%
+            max-width: 100%
+            background: rgba(0, 0, 0, .9)
+            z-index: 1
+            left: 0
+            height: 100vh
+        .menu-hide
+            display: none
+            @media #{$max900}
+                display: flex
+        a
+            position: relative
+            outline: none
+            color: $letters
+            text-decoration: none
+            text-transform: uppercase
+            letter-spacing: 1px
+            font-weight: 400
+            text-shadow: 0 0 1px rgba(255,255,255,0.3)
+            font-size: 15px
+            transition: all .3s
+            @media #{$max900}
+                color: $white
+                margin-bottom: 20px
+            &:nth-child(2)
+                &:focus, &:hover, &.active
+                    outline: none
+                    color: $pink
+            &:nth-child(3)
+                &:focus, &:hover, &.active
+                    outline: none
+                    color: $green
+            &:nth-child(4)
+                &:focus, &:hover, &.active
+                    outline: none
+                    color: $purple
+            &:nth-child(5)
+                &:focus, &:hover, &.active
+                    outline: none
+                    color: $yellow
+            &:nth-child(6)
+                &:focus, &:hover, &.active
+                    outline: none
+                    color: $orange
+                    cursor: pointer
+            &:focus, &:hover, &.active
+                outline: none
+                color: $blue
+                cursor: pointer
+    .cl-effect-6
+        a
+            font-size: 13px
+            padding: 10px
+            &:before
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 2px
+                background: $letters
+                content: ''
+                transition: top 0.3s
+                @media #{$max900}
+                    background: $white
+            &:after
+                position: absolute
+                top: 0
+                left: 0
+                width: 2px
+                height: 2px
+                background: $letters
+                content: ''
+                transition: height 0.3s
+                @media #{$max900}
+                    background: $white
+            &:hover::before
+                background: $blue
+                top: 100%
+                opacity: 1
+            &:hover::after
+                background: $blue
+                height: 100%
+                z-index: 3
+            &:nth-child(2)
+                &:hover::before
+                    background: $pink
+            &:nth-child(2)
+                &:hover::after
+                    background: $pink
+            &:nth-child(3)
+                &:hover::before
+                    background: $green
+            &:nth-child(3)
+                &:hover::after
+                    background: $green
+            &:nth-child(4)
+                &:hover::before
+                    background: $purple
+            &:nth-child(4)
+                &:hover::after
+                    background: $purple
+            &:nth-child(5)
+                &:hover::before
+                    background: $yellow
+            &:nth-child(5)
+                &:hover::after
+                    background: $yellow
+            &:nth-child(6)
+                &:hover::before
+                    background: $orange
+            &:nth-child(6)
+                &:hover::after
+                    background: $orange
+            &.active
+                &:before
+                    background: $blue
+                    top: 100%
+                    opacity: 1
+                    z-index: 3
+                &:after
+                    background: $blue
+                    height: 100%
+                &:nth-child(2)
+                    &:before
+                        background: $pink
+                &:nth-child(2)
+                    &:after
+                        background: $pink
+                &:nth-child(3)
+                    &:before
+                        background: $green
+                &:nth-child(3)
+                    &:after
+                        background: $green
+                &:nth-child(4)
+                    &:before
+                        background: $purple
+                &:nth-child(4)
+                    &:after
+                        background: $purple
+                &:nth-child(5)
+                    &:before
+                        background: $yellow
+                &:nth-child(5)
+                    &:after
+                        background: $yellow
+                &:nth-child(6)
+                    &:before
+                        background: $orange
+                &:nth-child(6)
+                    &:after
+                        background: $orange
+
+.home-main-container
+    .image-slider
+        width: 100%
+        max-height: 555px
+        height: 100vh
+        background-size: cover
+        background-position: center
+        position: relative
+        @media #{$max900}
+            max-height: 400px
+        @media #{$max650}
+            max-height: 300px
+        .home-title
+            position: absolute
+            right: 0
+            top: calc(100% - 70px)
+            @media #{$max1034}
+                right: 10px
+            // @media #{$max650}
+            //     top: 20px
+            h1
+                background: $blue
+                color: $white
+                padding: 5px 10px
+                position: relative
+                margin: 0
+                text-transform: uppercase
+                width: 100%
+                font-size: 24px
+                letter-spacing: 1px
+                box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+                border: 0px solid rgba(115, 112, 112, 1)
+                @media #{$max480}
+                    font-size: 18px
+                &:after
+                    position: absolute
+                    content: ""
+                    width: 0
+                    height: 0
+                    border-top: 10px solid rgba(115, 112, 112, 1)
+                    border-right: 10px solid transparent
+                    top: 41px
+                    right: -10px
+                    @media #{$max480}
+                        top: 34px
+                &:before
+                    position: absolute
+                    content: ""
+                    height: 100%
+                    background: $blue
+                    width: 10px
+                    top: 0
+                    right: -10px
+
+.home-project-info
+    background: $bg-grey
+    position: relative
+    .gallery-title
+        background: $blue
+        position: absolute
+        left: 0
+        top: 20px
+        @media #{$max1034}
+            left: 10px
+        h1
+            background: $blue
+            color: $white
+            padding: 5px 10px
+            position: relative
+            margin: 0
+            text-transform: uppercase
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 41px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $blue
+                width: 10px
+                top: 0
+                left: -10px
+    .home_info
+        @media #{$max900}
+            flex-direction: column
+    .home-project-info-left
+        padding: 20px
+        @media #{$max900}
+            align-items: center
+            margin-bottom: 50px
+    .home-few-words
+        background: $letters
+        color: $white
+        max-width: 366px
+        width: 100%
+        text-align: center
+        margin-bottom: 20px
+        @media #{$max900}
+            max-width: 100%
+        h3
+            background: $blue
+            padding: 10px
+            position: relative
+            margin: 0
+            width: 100%
+            font-size: 24px
+            letter-spacing: 1px
+            box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.6)
+            border: 0px solid rgba(115, 112, 112, 1)
+            &:after
+                position: absolute
+                content: ""
+                width: 0
+                height: 0
+                border-top: 10px solid rgba(115, 112, 112, 1)
+                border-left: 10px solid transparent
+                top: 51px
+                left: -10px
+            &:before
+                position: absolute
+                content: ""
+                height: 100%
+                background: $blue
+                width: 10px
+                top: 0
+                left: -10px
+        p
+            padding: 10px
+    .home-actions
+        align-items: baseline
+        min-width: 590px
+        width: 100%
+        @media #{$max650}
+            flex-direction: column
+            max-width: 275px
+            min-width: auto
+        .home
+            &-donate, &-involved, &-mission
+                padding: 0 10px
+                text-align: center
+                @media #{$max900}
+                    margin-bottom: 20px
+        .icon
+            &-brain
+                width: 50px
+                height: 50px
+                fill: $white
+            &-mission
+                width: 50px
+                height: 50px
+                fill: $white
+            &-box
+                width: 50px
+                height: 50px
+                fill: $white
+
+        .icons
+            background: $blue
+            border-radius: 50px
+            margin-bottom: 20px
+            width: 80px
+            height: 80px
+
+// slider customize
+.slider
+    max-width: 1000px
+    width: 100%
+    margin: 80px auto 20px
+    padding: 0 30px
+    .image_slider
+        padding: 0 5px
+        &:focus
+            outline: none
+        img
+            max-width: 430px
+            width: 100%
+    .slick-prev, .slick-next
+        &:before
+            color: $blue
+    .slick-next
+        right: 8px
+    .slick-prev
+        left: 8px
