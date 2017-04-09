@@ -15,12 +15,6 @@ DATABASES = {
     }
 }
 
-try:
-    with BASE_DIR.joinpath('conf', 'secrets.json').open() as handle:
-        SECRETS = json.load(handle)
-except IOError:
-    SECRETs = {}
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'testing@example.com'
 EMAIL_HOST_USER = ''

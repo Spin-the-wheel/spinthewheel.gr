@@ -12,12 +12,20 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 from pathlib import Path
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 PROJECT_PACKAGE = BASE_DIR.joinpath('spin')
 MEDIA_DIR = BASE_DIR.joinpath('media')
+
+
+try:
+    with BASE_DIR.joinpath('conf', 'secrets.json').open() as handle:
+        SECRETS = json.load(handle)
+except IOError:
+    SECRETS = {}
 
 ALLOWED_HOSTS = []
 
