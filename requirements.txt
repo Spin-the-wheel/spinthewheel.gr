@@ -1,2 +1,4 @@
+Pillow
 git+git://github.com/dianakhuang/pytumblr.git@diana/python-3-support
+psycopg2
 django
