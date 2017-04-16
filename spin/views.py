@@ -5,9 +5,9 @@ from posts.models import Post, Video
 
 def index(request):
 
-    post = Post.objects.order_by('-date').filter(published=True)[0]
+    post = Post.objects.order_by('-date').filter(published=True)[:1].get()
 
-    videos = Video.objects.all()[0]
+    videos = Video.objects.first()
 
     data= {
         'active_tab': 'home',
