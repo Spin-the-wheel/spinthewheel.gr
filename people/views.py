@@ -6,7 +6,7 @@ from .models import Person, Role
 
 def index(request):
 
-    persons = Person.objects.all()
+    persons = Person.objects.order_by('role__order', 'name').all()
     paginator = Paginator(persons, 6) # Show 6 persons per page
 
     page = request.GET.get('page')
