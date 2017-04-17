@@ -43,34 +43,34 @@
                 </div>
                 <br>
             {% endfor %}
+        </div>
 
-            <div class="pagination" self="center">
-                <span class="step-links">
-                    {% if paginated_posts.has_previous %}
-                        <a class="pagination_btn" href="{% url 'news:index' %}?page={{ paginated_posts.previous_page_number }}">
-                            <div class="icons" layout="row center-center">
-                                <svg class="icon-prev green">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
-                                </svg>
-                            </div>
-                        </a>
-                    {% endif %}
+        <div class="pagination" self="center">
+            <span class="step-links">
+                {% if paginated_posts.has_previous %}
+                    <a class="pagination_btn" href="{% url 'news:index' %}?page={{ paginated_posts.previous_page_number }}">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-prev green">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                            </svg>
+                        </div>
+                    </a>
+                {% endif %}
 
-                    <span class="current">
-                    Page {{ paginated_posts.number }} of {{ paginated_posts.paginator.num_pages }}
-                    </span>
-
-                    {% if paginated_posts.has_next %}
-                        <a class="pagination_btn" href="{% url 'news:index' %}?page={{ paginated_posts.next_page_number }}">
-                            <div class="icons" layout="row center-center">
-                                <svg class="icon-next green" >
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
-                                </svg>
-                            </div>
-                        </a>
-                    {% endif %}
+                <span class="current">
+                Page {{ paginated_posts.number }} of {{ paginated_posts.paginator.num_pages }}
                 </span>
-            </div>
+
+                {% if paginated_posts.has_next %}
+                    <a class="pagination_btn" href="{% url 'news:index' %}?page={{ paginated_posts.next_page_number }}">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-next green" >
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                            </svg>
+                        </div>
+                    </a>
+                {% endif %}
+            </span>
         </div>
 
     </section>

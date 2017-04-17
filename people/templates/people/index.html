@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <section class="weare-container" layout="row top-center">
+    <section class="weare-container" layout="column top-center">
 
         <div class="weare-title">
             <h1>Who we are</h1>
@@ -107,36 +107,36 @@
                     </p>
                 </div>
             {% endfor %}
-
-            <div class="pagination" self="center">
-                <span class="step-links">
-                    {% if people.has_previous %}
-                        <a class="pagination_btn" href="{% url 'people:index' %}?page={{ people.previous_page_number }}">
-                            <div class="icons" layout="row center-center">
-                                <svg class="icon-prev pink">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
-                                </svg>
-                            </div>
-                        </a>
-                    {% endif %}
-
-                    <span class="current">
-                    Page {{ people.number }} of {{ people.paginator.num_pages }}
-                    </span>
-
-                    {% if people.has_next %}
-                        <a class="pagination_btn" href="{% url 'people:index' %}?page={{ people.next_page_number }}">
-                            <div class="icons" layout="row center-center">
-                                <svg class="icon-next pink">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
-                                </svg>
-                            </div>
-                        </a>
-                    {% endif %}
-                </span>
-            </div>
-
         </div>
+
+        <div class="pagination" self="center">
+            <span class="step-links">
+                {% if people.has_previous %}
+                    <a class="pagination_btn" href="{% url 'people:index' %}?page={{ people.previous_page_number }}">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-prev pink">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                            </svg>
+                        </div>
+                    </a>
+                {% endif %}
+
+                <span class="current">
+                Page {{ people.number }} of {{ people.paginator.num_pages }}
+                </span>
+
+                {% if people.has_next %}
+                    <a class="pagination_btn" href="{% url 'people:index' %}?page={{ people.next_page_number }}">
+                        <div class="icons" layout="row center-center">
+                            <svg class="icon-next pink">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{% static 'svg/icons.svg' %}#arrow" />
+                            </svg>
+                        </div>
+                    </a>
+                {% endif %}
+            </span>
+        </div>
+
 
     </section>
 
