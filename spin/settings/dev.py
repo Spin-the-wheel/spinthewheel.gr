@@ -22,4 +22,3 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 EMAIL_PORT = 1025
 
-BLOG = 'spinthewheel-en.tumblr.com'

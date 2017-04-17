@@ -120,3 +120,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = str(MEDIA_DIR)
 MEDIA_URL = '/media/'
+
+BLOG = SECRETS.get('blog')
