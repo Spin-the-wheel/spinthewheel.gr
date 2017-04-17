@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.CharField(primary_key=True, max_length=200)
     title = models.CharField(max_length=200)
     url = models.URLField()
     body = models.TextField()
