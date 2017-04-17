@@ -5,6 +5,12 @@
 
 {% block scripts %}
     <script src="{% static 'vendor/%40fancyapps/fancybox/dist/jquery.fancybox.min.js' %}"></script>
+    <script>
+        // fancybox
+        $("[data-fancybox]").fancybox({
+            // Options will go here
+        });
+    </script>
 {% endblock %}
 
 {% block main %}
