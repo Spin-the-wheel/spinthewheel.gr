@@ -5,7 +5,7 @@ from posts.models import Post, Video
 
 def index(request):
 
-    post = Post.objects.order_by('-date').filter(published=True)[:1].get()
+    post = Post.objects.order_by('-date').filter(published=True).first()
 
     videos = Video.objects.first()
 
