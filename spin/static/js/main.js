@@ -46,10 +46,6 @@ $(document).ready(function(){
         this.rows = minRows + rows;
     });
 
-    // fancybox
-    $("[data-fancybox]").fancybox({
-        // Options will go here
-    });
 });
 
 
