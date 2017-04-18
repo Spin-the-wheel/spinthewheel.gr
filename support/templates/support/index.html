@@ -65,8 +65,8 @@
             <h3>{{ kind.description }}</h3>
             <div class="sponsors" layout="rows top-center">
                 {% for sponsor in kind.sponsor_set.all %}
-                    <a rel="nofollow" target="_blank" href="{{ sponsor.url }}" class="sponsor" >
-                        <div class="bg-image-sponsors" style="background-image:url({{ sponsor.image.url }})"></div>
+                <a rel="nofollow" target="_blank" {% if sponsor.url %}href="{{ sponsor.url }}"{% endif %} class="sponsor" >
+                        <div class="bg-image-sponsors" style="background-image:url({% if  sponsor.image %}{{ sponsor.image.url }}{% else %}{% static 'svg/big.svg' %}{% endif %})"></div>
                     </a>
                 {% endfor %}
             </div>
