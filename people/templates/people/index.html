@@ -96,7 +96,7 @@
             {% for person in people %}
 
                 <div class="person left-rigth" layout="row top-center">
-                    <div class="person-img" self="size-x1" style="background-image: url({{ person.image.url }});background-size: cover;background-position: center;">
+                    <div class="person-img" self="size-x1" style="background-image: url({% if person.image %}{{ person.image.url }}{% else %}{% static 'svg/big.svg'%}{% endif %});background-size: cover;background-position: center;">
                         </div>
 
                     <p self="size-x2">

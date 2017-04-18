@@ -13,6 +13,7 @@ class Sponsor(models.Model):
     image = models.ImageField(upload_to = 'sponsor_image', blank=True)
     name = models.CharField(max_length=200)
     title = models.ForeignKey(Kind)
-    url = models.URLField(null=True)
+    url = models.URLField(null=True, blank=True)
+
     def __str__(self):
         return self.name
