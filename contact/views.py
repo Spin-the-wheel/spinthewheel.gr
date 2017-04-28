@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.conf import settings
+
 
 from django.core.mail import send_mail, mail_admins
 
@@ -22,10 +24,10 @@ def index(request):
             email = form.cleaned_data['email']
             content = form.cleaned_data['content']
 
-            recipients = ['']
+            recipients = settings.SECRETS.get('e_recipients')
 
             message = "name: %s %s\nphone: %s\nemail: %s\nmessage: %s" % (fname, surname, phone, email, content )
-            send_mail('spin the wheel contact form', message, '', recipients)
+            send_mail('spin the wheel contact form', message, settings.SECRETS.get('email_from'), recipients)
 
             contact = Contact(
                 fname = fname,
