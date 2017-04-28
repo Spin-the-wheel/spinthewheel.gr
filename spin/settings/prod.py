@@ -22,7 +22,8 @@ DATABASES = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = SECRETS.get('email_from')
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025
+EMAIL_HOST = SECRETS.get('e_host')
+EMAIL_HOST_USER = SECRETS.get('e_host_user')
+EMAIL_HOST_PASSWORD = SECRETS.get('e_host_password')
+EMAIL_USE_TLS = SECRETS.get('e_tls')
+EMAIL_PORT = SECRETS.get('e_port')
