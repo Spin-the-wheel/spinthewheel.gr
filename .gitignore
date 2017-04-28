@@ -1,13 +1,13 @@
-node_modules/
+/node_modules/
 db.sqlite3
-conf/
+/conf/
 env/
-static/
+/static/
 *.bak
 
-media/
-spin/static/css/
-spin/static/vendor/
+/media/
+/spin/static/css/
+/spin/static/vendor/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -30,10 +30,8 @@ pip-delete-this-directory.txt
 # pyenv
 .python-version
 
-# dotenv
-.env
-
 # virtualenv
+.env
 .venv
 venv/
 ENV/
