@@ -1,10 +1,11 @@
 /node_modules/
 db.sqlite3
-/conf/
+/conf/secrets.json
 env/
 /static/
 *.bak
 
+.vagrant
 /media/
 /spin/static/css/
 /spin/static/vendor/
